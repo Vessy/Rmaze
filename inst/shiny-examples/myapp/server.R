@@ -1,19 +1,27 @@
 server <- shinyServer(function(input, output) {
 
-  eventReactive(input$gmButton, {
+  maze <- reactive({
+    input$gmButton
 
-    maze <- makeGraph(input$width, input$hight)
+    width <- isolate(input$width)
+    height <- isolate(input$hight)
+    method <- isolate(input$method)
 
-    switch (input$method,
-            "rbt" = { maze <- makeMaze_dfs(maze, inShiny=TRUE)},
-            "ka" = { maze <- makeMaze_kruskal(maze, inShiny=TRUE)},
-            "pa" = { maze <- makeMaze_prim(maze, inShiny=TRUE)}
-    )
+    g <- isolate(makeGraph(width, height))
 
-    output$plotMaze <- renderPlot({
-      plotMaze(maze, input$width, input$hight, inShiny=TRUE)
-    })
-    return()
+    myMaze <- switch(method,
+                     "rbt" = makeMaze_dfs(g, inShiny=TRUE),
+                     "ka" = makeMaze_kruskal(g, inShiny=TRUE),
+                     "pa" = makeMaze_prim(g, inShiny=TRUE))
+
   })
+
+  output$plotMaze <- renderPlot({
+    width <- isolate(input$width)
+    height <- isolate(input$hight)
+    plotMaze(maze(), width, height, inShiny=TRUE)
+
+  })
+
 })
 
