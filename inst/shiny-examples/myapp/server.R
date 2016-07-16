@@ -1,13 +1,12 @@
 server <- shinyServer(function(input, output) {
 
-  maze <- reactive({
-    input$gmButton
+  maze <- eventReactive(input$gmButton, {
 
-    width <- isolate(input$width)
-    height <- isolate(input$hight)
-    method <- isolate(input$method)
+    width <- input$width
+    height <- input$hight
+    method <- input$method
 
-    g <- isolate(makeGraph(width, height))
+    g <- makeGraph(width, height)
 
     myMaze <- switch(method,
                      "rbt" = makeMaze_dfs(g, inShiny=TRUE),
