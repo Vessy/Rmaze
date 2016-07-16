@@ -13,6 +13,10 @@ server <- shinyServer(function(input, output) {
                      "ka" = makeMaze_kruskal(g, inShiny=TRUE),
                      "pa" = makeMaze_prim(g, inShiny=TRUE))
 
+    if (input$imperfect) {
+      myMaze <- makeImperfect(myMaze, inShiny=TRUE)
+    }
+
   })
 
   output$plotMaze <- renderPlot({
