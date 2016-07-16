@@ -28,7 +28,6 @@ ui <- shinyUI(fluidPage(
        )),
 
    column(8,
-    # Show a plot of the generated distribution
     mainPanel(
       wellPanel(
         h4("Maze:"),
