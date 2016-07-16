@@ -16,10 +16,6 @@ ui <- shinyUI(fluidPage(
                        "Kruskal's algorithm" = "ka",
                        "Prim's algorithm" = "pa")),
 
-         checkboxInput(inputId = "show_steps",
-                       label = strong("Show steps"),
-                       value = FALSE),
-
          checkboxInput(inputId = "imperfect",
                        label = strong("Create imperfect maze"),
                        value = FALSE),
