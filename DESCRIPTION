@@ -1,0 +1,21 @@
+Package: Rmaze
+Type: Package
+Title: A package for generating mazes
+Version: 0.1.0
+Authors@R: c(person("Vesna", "Memisevic", email = "vesna@vesnam.com", role = c("aut", "cre")))
+Maintainer: Vesna Memisevic <vesna@vesnam.com>
+Description: A package for generating mazes in R.
+License: What license is it under?
+LazyData: TRUE
+BugReports: https://github.com/Vessy/sysBio/issues
+URL: https://github.com/Vessy/Rmaze
+Imports:
+    stringr (>= 1.0.0),
+    igraph (>= 1.0.1),
+    ggplot2 (>= 2.1.0),
+    shiny (>= 0.13.2),
+License: MIT
+RoxygenNote: 5.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
