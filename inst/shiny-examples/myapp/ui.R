@@ -9,7 +9,7 @@ ui <- shinyUI(fluidPage(
       wellPanel(
          h4("Define maze:"),
          sliderInput("width", "Maze width", 5, 100, 10, step = 1),
-         sliderInput("hight", "Maze hight", 5, 100, 10, step = 1),
+         sliderInput("height", "Maze height", 5, 100, 10, step = 1),
 
          selectInput("method", "Select maze generation method",
                      c("Recursive backtracker" = "rbt",

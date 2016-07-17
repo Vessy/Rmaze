@@ -2,7 +2,7 @@
 #'
 #' @param gD an existing maze graph object.
 #' @param stepBystep a flag that will allow a step by step plot of maze creation
-#' @param nrows maze hight (number of rows); required only for the step by step plot; default value set to 0.
+#' @param nrows maze height (number of rows); required only for the step by step plot; default value set to 0.
 #' @param ncols maze width (number of columns); required only for the step by step plot; default value set to 0.
 #' @param inShiny a flag that marks whether the function is called from a shiny app or console
 #'

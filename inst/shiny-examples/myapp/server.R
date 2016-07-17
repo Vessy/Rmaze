@@ -3,7 +3,7 @@ server <- shinyServer(function(input, output) {
   maze <- eventReactive(input$gmButton, {
 
     width <- input$width
-    height <- input$hight
+    height <- input$height
     method <- input$method
 
     g <- makeGraph(width, height)
@@ -17,11 +17,13 @@ server <- shinyServer(function(input, output) {
       myMaze <- makeImperfect(myMaze, inShiny=TRUE)
     }
 
+    myMaze
+
   })
 
   output$plotMaze <- renderPlot({
     width <- isolate(input$width)
-    height <- isolate(input$hight)
+    height <- isolate(input$height)
     plotMaze(maze(), width, height, inShiny=TRUE)
 
   })

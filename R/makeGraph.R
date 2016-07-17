@@ -2,7 +2,7 @@
 #' Nodes represent cells and edges betweem nodes represent wall sites.
 #' All walls are initially on.
 #'
-#' @param nrows maze hight (number of rows); default value set to 0.
+#' @param nrows maze height (number of rows); default value set to 0.
 #' @param ncols maze width (number of columns); default value set to 0.
 #'
 #' @return This function creates and returns a maze graph that represents a rectangular grid
@@ -19,7 +19,7 @@
 makeGraph <- function(nrows=0, ncols=0){
 
   if (nrows <= 0)
-    stop("Number of rows (hight) has to be larger than zero!")
+    stop("Number of rows (height) has to be larger than zero!")
 
   if (ncols <= 0)
     stop("Number of columns (width) has to be larger than zero!")

@@ -1,7 +1,7 @@
 #' Given a maze graph, plot a maze.
 #'
 #' @param gD an existing maze graph object.
-#' @param nrows maze hight (number of rows); default value set to 0.
+#' @param nrows maze height (number of rows); default value set to 0.
 #' @param ncols maze width (number of columns); default value set to 0.
 #' @param inShiny a flag that marks whether the function is called from a shiny app or console
 #'
@@ -24,7 +24,7 @@ plotMaze <- function(gD=NA, nrows=0, ncols=0, inShiny = FALSE){
   }
 
   if (nrows <= 0)
-    stop("Number of rows (hight) has to be larger than zero!")
+    stop("Number of rows (height) has to be larger than zero!")
 
   if (ncols <= 0)
     stop("Number of columns (width) has to be larger than zero!")

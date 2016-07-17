@@ -1,0 +1,114 @@
+---
+title: "Rmaze - A short tutorial"
+author: "Vesna Memisevic"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Rmaze - A short tutorial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+`Rmaze` is a package that provides options to generate and plot mazes in R. 
+
+Currently, the package provides options to create a maze using the recursive backtracker, Kruskal's, and Prim's algorithms. These algorithms create "perfect" mazes, i.e., mazes without loops and without inaccessible areas. Such mazes have exactly one solution (there is exactly one path from each maze cell to another maze cell).
+
+All mazes are represented in a form of connected graphs, where the edges represent possible wall sites and the nodes represent maze cells. All graph manipulations are based on the functions provided in the [igraph](https://cran.r-project.org/web/packages/igraph/index.html) package.
+
+To install the `Rmaze` package, run the following command:
+
+```{r}
+#library("devtools")
+#install_github("Vessy/Rmaze")
+library("Rmaze")
+```
+
+To run a Shiny app showcasing the basic Rmaze features, run the following command:
+
+```{r}  
+Rmaze::runExample()
+```
+
+To report a bug, a problem, or have a suggestion, please raise an issue in the [`Rmaze`](https://github.com/Vessy/Rmaze) GitHub project.
+
+## Examples
+
+### Example 1: Create an initial maze (maze with all walls on)
+
+All mazes are represented in a form of connected graphs, where the edges represent possible wall sites and the nodes represent maze cells. Initial maze will have all walls up
+
+```{r}
+# Create an initial maze
+maze1 <- makeGraph(10, 10)
+```
+
+To see this initial maze, we can plot it:
+
+```{r}
+plotMaze(maze1, 10, 10)
+```
+
+It is just a mash grid right now.
+
+### Example 2: Create mazes using different algorithms
+
+Once we have created an initial maze graph, we can use it to create a real maze.
+
+For example, we can create a maze using the recursive backtracker algorithm:
+
+```{r}
+maze2 <- makeMaze_dfs(maze1)
+plotMaze(maze2, 10, 10)
+```
+
+Or Kruskal's algorithm
+
+```{r}
+maze3 <- makeMaze_kruskal(maze1)
+plotMaze(maze3, 10, 10)
+```
+
+Or Prim's algorithm:
+
+```{r}
+maze4 <- makeMaze_prim(maze1)
+plotMaze(maze4, 10, 10)
+```
+
+### Example 3: Step-by-step maze creation process
+
+Alternatively, we can plot step-by-step maze creation process. This process is slower and is not recommended for larger mazes
+
+```{r eval=FALSE}
+# Recursive backtracker algorithm
+maze2 <- makeMaze_dfs(maze1, stepBystep = TRUE, nrows=10, ncols=10)
+
+#Kruskal's algorithm
+maze3 <- makeMaze_kruskal(maze1, stepBystep = TRUE, nrows=10, ncols=10)
+
+# Prim's algorithm:
+maze4 <- makeMaze_prim(maze1, stepBystep = TRUE, nrows=10, ncols=10)
+```
+
+
+### Example 4: Solving the maze
+
+We can also plot a maze solution. The maze solution is defined as the shortest path between the start and end maze cells:
+
+```{r}
+plotMazeSolution(maze2, 10, 10)
+```
+
+### Example 5: Creating an imperfect maze
+
+`Rmaze` provides an option to create imperfect mazes. These mazes are created by randomly adding or removing specified percentages of maze walls from the perfect mazes. In the process of randomization, the algorithm ensures that the added and removed walls do not interfere with the existence of the maze solution. The imperfect mazes contain loops, inaccessible areas, and may have more than one solution.
+
+```{r}
+# Create imperfect maze from the maze2 (the perfect maze created using the recursive backtracker algorithm)
+maze5 <- makeImperfect(maze2)
+
+# Plot the imperfect maze and its solution
+plotMaze(maze5, 10, 10)
+plotMazeSolution(maze5, 10, 10)
+```
