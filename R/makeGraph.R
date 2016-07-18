@@ -39,7 +39,6 @@ makeGraph <- function(nrows=0, ncols=0){
         df_hlp <- rbind(df_hlp,
                         data.frame(node1 = paste("A", as.character(i), as.character(j), sep="_"),
                                    node2 = paste("A", as.character(i), as.character(j+1), sep="_")))
-
     }
 
   # Create undirected graph from the edge list (data frame)
