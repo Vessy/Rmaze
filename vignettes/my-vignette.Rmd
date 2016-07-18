@@ -91,6 +91,7 @@ maze3 <- makeMaze_kruskal(maze1, stepBystep = TRUE, nrows=10, ncols=10)
 maze4 <- makeMaze_prim(maze1, stepBystep = TRUE, nrows=10, ncols=10)
 ```
 
+White cells are unvisited maze cells, red cells are the maze cells on stack, and the blue cells are the maze cells that have been visited and removed from the stack.
 
 ### Example 4: Solving the maze
 
