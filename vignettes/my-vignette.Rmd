@@ -18,9 +18,14 @@ All mazes are represented in a form of connected graphs, where the edges represe
 
 To install the `Rmaze` package, run the following command:
 
+```{r eval=FALSE}
+library("devtools")
+install_github("Vessy/Rmaze")
+```
+
+To load the `Rmaze` package, run:
+
 ```{r}
-#library("devtools")
-#install_github("Vessy/Rmaze")
 library("Rmaze")
 ```
 
