@@ -17,9 +17,7 @@ Currently, the package provides options to create a maze using the recursive bac
 
 All mazes are represented in a form of connected graphs, where the edges represent possible wall sites and the nodes represent maze cells. All graph manipulations are based on the functions provided in the [igraph](https://cran.r-project.org/web/packages/igraph/index.html) package.
 
-<div style="width:400px; height=400px">
 ![A maze generated using a recursive backtracker algorithm (randomized version of depth-first search algorithm)](http://www.vesnam.com/Rblog/wp-content/uploads/2016/07/maze_ex1.jpeg)
-</div>
 
 The package also provides options to plot step-by-step maze generating process and the maze solution.
 
