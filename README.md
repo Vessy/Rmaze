@@ -1,5 +1,16 @@
 # Rmaze
 
+## Installation
+
+To install the Rmaze package, run the following command:
+
+```
+devtools::install_github("Vessy/Rmaze")
+library("Rmaze")
+```
+
+## Description
+
 Rmaze is a package that provides options to generate and plot mazes in R. 
 
 Currently, the package provides options to create a maze using the recursive backtracker, Kruskal's, and Prim's algorithms. These algorithms create "perfect" mazes, i.e., mazes without loops and without inaccessible areas. Such mazes have exactly one solution (there is exactly one path from each maze cell to another maze cell).
@@ -15,7 +26,6 @@ The package also provides options to plot step-by-step maze generating process a
 <div style="width:400px; height=400px">
 ![A step-by-step illustration of maze creation using using a recursive backtracker algorithm. White cells are unvisited maze cells, red cells are the maze cells on stack, and the blue cells are the maze cells that have been visited and removed from the stack)](http://www.vesnam.com/Rblog/wp-content/uploads/2016/07/dfs_sbs_ex2.jpeg)
 </div>
-
 
 The maze solution is defined as the shortest path between the start and end maze cells:
 
@@ -33,31 +43,24 @@ Finally, the package provides an option to create imperfect mazes. These mazes a
 ![A solution for the imperfect maze](http://www.vesnam.com/Rblog/wp-content/uploads/2016/07/maze_ex1_imp_sol.jpeg)
 </div>
 
-## Installation
-
-To install the Rmaze package, run the following command:
-
-    devtools::install_github("Vessy/Rmaze")
-    library("Rmaze")
-
 ## Shiny
 
 To run a Shiny app showcasing the basic Rmaze features, run the following command:
-  
-    Rmaze::runExample()
-    
+
+```  
+Rmaze::runExample()
+``` 
 
 <div style="width:400px; height=400px">
 ![Shiny app showcasing the basic Rmaze features](http://www.vesnam.com/Rblog/wp-content/uploads/2016/07/shiny_ex1.jpg)
 </div>    
-    
 
 ## Questions or help
 To report a bug, problem, or question, please open an issue.
 
 ## Additional resources
 
-Want to learn more about maze, see:
+To learn more about mazes, see:
 
 [http://www.jamisbuck.org/presentations/rubyconf2011/index.html](http://www.jamisbuck.org/presentations/rubyconf2011/index.html)
 
