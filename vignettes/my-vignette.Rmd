@@ -29,7 +29,7 @@ To load the `Rmaze` package, run:
 library("Rmaze")
 ```
 
-To run a Shiny app showcasing the basic Rmaze features, run the following command:
+To run a Shiny app showcasing the basic `Rmaze` features, run the following command:
 
 ```{r}  
 Rmaze::runExample()
@@ -41,10 +41,9 @@ To report a bug, a problem, or have a suggestion, please raise an issue in the [
 
 ### Example 1: Create an initial maze (maze with all walls on)
 
-All mazes are represented in a form of connected graphs, where the edges represent possible wall sites and the nodes represent maze cells. Initial maze will have all walls up
+All mazes are represented in a form of connected graphs, where the edges represent possible wall sites and the nodes represent maze cells. Initial maze will have all walls up.
 
 ```{r}
-# Create an initial maze
 maze1 <- makeGraph(10, 10)
 ```
 
