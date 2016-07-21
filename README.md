@@ -13,7 +13,7 @@ library("Rmaze")
 
 Rmaze is a package that provides options to generate and plot mazes in R. 
 
-Currently, the package provides options to create a maze using the recursive backtracker, Kruskal's, and Prim's algorithms. These algorithms create "perfect" mazes, i.e., mazes without loops and without inaccessible areas. Such mazes have exactly one solution (there is exactly one path from each maze cell to another maze cell).
+Currently, the package provides options to create a maze using the recursive backtracker (modified depth-first search), Kruskal's, and Prim's algorithms. These algorithms create "perfect" mazes, i.e., mazes without loops and without inaccessible areas. Such mazes have exactly one solution (there is exactly one path from each maze cell to another maze cell).
 
 All mazes are represented in a form of connected graphs, where the edges represent possible wall sites and the nodes represent maze cells. All graph manipulations are based on the functions provided in the [igraph](https://cran.r-project.org/web/packages/igraph/index.html) package.
 
