@@ -1,5 +1,14 @@
 # Rmaze
 
+## Installation
+
+To install the Rmaze package, run the following command:
+
+    devtools::install_github("Vessy/Rmaze")
+    library("Rmaze")
+
+## Description
+
 Rmaze is a package that provides options to generate and plot mazes in R. 
 
 Currently, the package provides options to create a maze using the recursive backtracker, Kruskal's, and Prim's algorithms. These algorithms create "perfect" mazes, i.e., mazes without loops and without inaccessible areas. Such mazes have exactly one solution (there is exactly one path from each maze cell to another maze cell).
@@ -32,13 +41,6 @@ Finally, the package provides an option to create imperfect mazes. These mazes a
 <div style="width:400px; height=400px">
 ![A solution for the imperfect maze](http://www.vesnam.com/Rblog/wp-content/uploads/2016/07/maze_ex1_imp_sol.jpeg)
 </div>
-
-## Installation
-
-To install the Rmaze package, run the following command:
-
-    devtools::install_github("Vessy/Rmaze")
-    library("Rmaze")
 
 ## Shiny
 
