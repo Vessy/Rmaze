@@ -56,12 +56,16 @@ makeMaze_dfs <- function(gD = NA, stepBystep = FALSE, nrows=0, ncols=0, inShiny 
 
       # Remove the wall between the current cell and the chosen cell
       igraph::E(gD)[current_cell_name %--% v_adjacent[randomly_select]$name]$wall <- "OFF"
+      # For older versions, the above may not work, so use this alternative
+      # igraph::E(gD)[current_cell_name %--% igraph::V(gD)[v_adjacent[randomly_select]]$name]$wall <- "OFF"
 
       # Push the current cell/node to the stack
       nodes_stack <- c(current_cell_name, nodes_stack)
 
       # Make the adjacent node the current node
       current_cell_name <- v_adjacent[randomly_select]$name
+      # For older versions, the above may not work, so use this alternative
+      #current_cell_name <- igraph::V(gD)[v_adjacent[randomly_select]]$name]
 
     } else {
       # Mark the cell as finished
