@@ -7,7 +7,7 @@
 #' @export
 
 runExample <- function() {
-  appDir <- system.file("shiny-examples", "myapp", package = "mazeR")
+  appDir <- system.file("shiny-examples", "myapp", package = "Rmaze")
   if (appDir == "") {
     stop("Could not find example directory. Try re-installing `mazeR`.", call. = FALSE)
   }

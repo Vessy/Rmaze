@@ -13,6 +13,5 @@ Code from: http://www.r-bloggers.com/supplementing-your-r-package-with-a-shiny-a
 }
 \examples{
 Rmaze::runExample()
-
 }
 
